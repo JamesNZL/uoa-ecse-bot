@@ -7,6 +7,7 @@
     "dev": "pnpm run build && pnpm run start",
     "build": "tsc -p src/",
     "start": "node ./dist/index.js",
+    "deploy-commands": "pnpm run build && node ./dist/scripts/deploy-commands.js",
     "release": "standard-version --sign --commit-all",
     "publish": "git push --follow-tags origin main"
   },
