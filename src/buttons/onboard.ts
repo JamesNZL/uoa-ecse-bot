@@ -48,7 +48,7 @@ const onboardButton: Button = {
 
 			console.info(`INFO: ${interaction.user.username} just attempted to onboard without ${interpolation} role(s).`);
 
-			embed.setTitle('Error')
+			embed.setTitle('Failed to Onboard')
 				.setDescription(`You must select your ${interpolation} in <id:customize> before onboarding!`)
 				.setColor(COLOURS.ERROR);
 			interaction.reply({ embeds: [embed], ephemeral: true });
