@@ -1,6 +1,6 @@
 {
   "name": "uoa-ecse-bot",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A basic, single-concern Discord bot for the UoA ECSE server to handle onboarding.",
   "main": "./dist/index.js",
   "scripts": {

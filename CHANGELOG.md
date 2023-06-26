@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.1](https://github.com/JamesNZL/uoa-ecse-bot/compare/v1.0.0...v1.0.1) (2023-06-26)
+
+
+### Bug Fixes
+
+* **onboard:** :bug: enforce uniqueness of spec and part roles ([635a1dd](https://github.com/JamesNZL/uoa-ecse-bot/commit/635a1dd7ab30a43161bae9f9ad0b4be838295661))
+
 ## 1.0.0 (2023-06-26)
 
 
