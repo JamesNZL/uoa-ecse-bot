@@ -2,6 +2,7 @@
 	"conventionalCommits.scopes": [
 		"ping",
 		"setup",
-		"onboard"
+		"onboard",
+		"autorole"
 	]
 }

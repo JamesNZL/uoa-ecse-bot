@@ -5,7 +5,7 @@ import { commands } from './commands';
 import { buttons } from './buttons';
 
 import { Client } from './types/discord';
-import { TOKEN, COLOURS } from './.config.json';
+import { TOKEN, COLOURS, IDS } from './.config.json';
 
 const client = new Client({
 	intents: [
@@ -21,7 +21,7 @@ client.login(TOKEN);
 
 client.once(
 	Events.ClientReady,
-	_client => console.log(`Logged in as ${_client.user?.username}!`)
+	_client => console.log(`Logged in as ${_client.user?.username}!`),
 );
 
 client.on(
@@ -92,5 +92,13 @@ client.on(
 				}
 			}
 		}
-	}
+	},
+);
+
+client.on(
+	Events.GuildMemberAdd,
+	member => {
+		if (member.user.bot) return;
+		member.roles.add(IDS.ROLES.ONBOARDING);
+	},
 );
