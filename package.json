@@ -1,0 +1,34 @@
+{
+  "name": "uoa-ecse-bot",
+  "version": "1.0.0",
+  "description": "A basic, single-concern Discord bot for the UoA ECSE server to handle onboarding.",
+  "main": "./dist/index.js",
+  "scripts": {
+    "dev": "pnpm run build && pnpm run start",
+    "build": "tsc -p src/",
+    "start": "node ./dist/index.js",
+    "release": "standard-version --sign --commit-all",
+    "publish": "git push --follow-tags origin main"
+  },
+  "author": "James Bao",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.3.1",
+    "@typescript-eslint/eslint-plugin": "^5.60.0",
+    "eslint": "^8.43.0",
+    "standard-version": "^9.5.0",
+    "typescript": "^5.1.3"
+  },
+  "dependencies": {
+    "@discordjs/builders": "^1.6.3",
+    "@discordjs/rest": "^1.7.1",
+    "discord-api-types": "^0.37.46",
+    "dotenv": "^16.3.1"
+  },
+  "standard-version": {
+    "scripts": {
+      "preinstall": "npx only-allow pnpm",
+      "prerelease": "pnpm update -D"
+    }
+  }
+}
