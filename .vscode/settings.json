@@ -1,6 +1,7 @@
 {
 	"conventionalCommits.scopes": [
 		"ping",
-		"setup"
+		"setup",
+		"onboard"
 	]
 }

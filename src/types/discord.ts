@@ -1,9 +1,10 @@
-import { Client as BaseClient, CommandInteraction } from 'discord.js';
+import { Client as BaseClient, CommandInteraction, ButtonInteraction } from 'discord.js';
 import { SlashCommandBuilder, SlashCommandSubcommandBuilder } from '@discordjs/builders';
 import { Collection } from '@discordjs/collection';
 
 export class Client extends BaseClient {
 	public commands: Commands = new Collection();
+	public buttons: Buttons = new Collection();
 }
 
 export interface GlobalCommand {
@@ -20,3 +21,10 @@ export interface GuildCommand {
 type Command = GlobalCommand | GuildCommand;
 
 export type Commands = Collection<string, Command>;
+
+export interface Button {
+	customId: string;
+	execute: (interaction: ButtonInteraction) => Promise<void>;
+}
+
+export type Buttons = Collection<string, Button>;

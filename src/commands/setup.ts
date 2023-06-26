@@ -1,6 +1,8 @@
 import { PermissionFlagsBits, ButtonStyle } from 'discord.js';
 import { SlashCommandBuilder, EmbedBuilder, ButtonBuilder, ActionRowBuilder } from '@discordjs/builders';
 
+import onboardButton from '../buttons/onboard';
+
 import { GuildCommand } from '../types/discord';
 import { COLOURS, EMOJI, IDS } from '../.config.json';
 
@@ -52,13 +54,13 @@ const setupCommand: GuildCommand = {
 			.setDescription(`Click the <:${EMOJI.NAME}:${EMOJI.ID}> button below to enter the server.`)
 			.setColor(COLOURS.PRIMARY);
 
-		const onboardButton = new ButtonBuilder()
-			.setCustomId('onboard')
+		const button = new ButtonBuilder()
+			.setCustomId(onboardButton.customId)
 			.setEmoji({ id: EMOJI.ID })
 			.setStyle(ButtonStyle.Primary);
 
 		const buttonRow = new ActionRowBuilder<ButtonBuilder>()
-			.addComponents(onboardButton);
+			.addComponents(button);
 
 		const alreadySentPreviously = (await onboardingChannel.messages.fetch())
 			.some(message => {
