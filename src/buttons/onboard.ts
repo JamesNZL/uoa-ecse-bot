@@ -37,9 +37,9 @@ const onboardButton: Button = {
 		// Check if the user satisfies minimum roles requirement
 		const specRoles = interaction.member.roles.cache.filter(({ id }) => IDS.ROLES.SPECIALISATIONS.includes(id));
 		const partRoles = interaction.member.roles.cache.filter(({ id }) => IDS.ROLES.PARTS.includes(id));
-		const isNonEcse = interaction.member.roles.cache.has(IDS.ROLES.NON_ECSE);
+		const isNonECSE = interaction.member.roles.cache.has(IDS.ROLES.NON_ECSE);
 
-		if ((specRoles.size === 0 || partRoles.size === 0) && !isNonEcse) {
+		if ((specRoles.size === 0 || partRoles.size === 0) && !isNonECSE) {
 			const interpolation = (specRoles.size === 0 && partRoles.size === 0)
 				? '`Specialisation` and `Part`'
 				: (specRoles.size === 0)
