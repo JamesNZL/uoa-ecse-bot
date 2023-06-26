@@ -60,7 +60,7 @@ const onboardButton: Button = {
 		if (specRoles.size > 1 || partRoles.size > 1) {
 			const interpolation = (specRoles.size > 1 && partRoles.size > 1)
 				? '`Specialisation` and one `Part`'
-				: (specRoles.size === 0)
+				: (specRoles.size > 1)
 					? '`Specialisation`'
 					: '`Part`';
 
