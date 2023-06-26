@@ -35,19 +35,39 @@ const onboardButton: Button = {
 		}
 
 		// Check if the user satisfies minimum roles requirement
-		const hasSpecialisation = interaction.member.roles.cache.some(({ id }) => IDS.ROLES.SPECIALISATIONS.includes(id));
-		const hasPart = interaction.member.roles.cache.some(({ id }) => IDS.ROLES.PARTS.includes(id));
-		if (!hasSpecialisation || !hasPart) {
-			const interpolation = (!hasSpecialisation && !hasPart)
+		const specRoles = interaction.member.roles.cache.filter(({ id }) => IDS.ROLES.SPECIALISATIONS.includes(id));
+		const partRoles = interaction.member.roles.cache.filter(({ id }) => IDS.ROLES.PARTS.includes(id));
+		const isNonEcse = interaction.member.roles.cache.has(IDS.ROLES.NON_ECSE);
+
+		if ((specRoles.size === 0 || partRoles.size === 0) && !isNonEcse) {
+			const interpolation = (specRoles.size === 0 && partRoles.size === 0)
 				? '`Specialisation` and `Part`'
-				: (!hasSpecialisation)
+				: (specRoles.size === 0)
 					? '`Specialisation`'
 					: '`Part`';
 
 			console.info(`INFO: ${interaction.user.username} just attempted to onboard without ${interpolation} role(s).`);
 
 			embed.setTitle('Failed to Onboard')
-				.setDescription(`You must select your ${interpolation} in <id:customize> before onboarding!`)
+				.setDescription(`You must select your ${interpolation} before onboarding!\n\nVisit <id:customize> to select your roles.`)
+				.setColor(COLOURS.ERROR);
+			interaction.reply({ embeds: [embed], ephemeral: true });
+
+			return;
+		}
+
+		// Check that the user does not have too many roles
+		if (specRoles.size > 1 || partRoles.size > 1) {
+			const interpolation = (specRoles.size > 1 && partRoles.size > 1)
+				? '`Specialisation` and one `Part`'
+				: (specRoles.size === 0)
+					? '`Specialisation`'
+					: '`Part`';
+
+			console.info(`INFO: ${interaction.user.username} just attempted to onboard with too many ${interpolation.replace('one ', '')} roles.`);
+
+			embed.setTitle('Failed to Onboard')
+				.setDescription(`You may only have one ${interpolation} role!\n\nVisit <id:customize> to update your roles.`)
 				.setColor(COLOURS.ERROR);
 			interaction.reply({ embeds: [embed], ephemeral: true });
 
