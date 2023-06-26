@@ -28,8 +28,6 @@ const onboardButton: Button = {
 
 		// Check if the user is already onboarded
 		if (!interaction.member.roles.cache.has(IDS.ROLES.ONBOARDING)) {
-			console.log(interaction.member.roles.cache.keys());
-
 			embed.setDescription('You\'re already onboarded!');
 			interaction.reply({ embeds: [embed], ephemeral: true });
 
