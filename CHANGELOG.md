@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/JamesNZL/uoa-ecse-bot/compare/v1.1.0...v1.2.0) (2023-06-26)
+
+
+### Features
+
+* **client:** :sparkles: implement client presence ([d52e578](https://github.com/JamesNZL/uoa-ecse-bot/commit/d52e5789b3b2b4f3bd6d60f27eef36a0b445042f))
+
 ## [1.1.0](https://github.com/JamesNZL/uoa-ecse-bot/compare/v1.0.2...v1.1.0) (2023-06-26)
 
 
