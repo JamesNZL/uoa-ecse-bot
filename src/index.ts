@@ -1,8 +1,9 @@
-import { Events, GatewayIntentBits } from 'discord.js';
+import { GatewayIntentBits, Events } from 'discord.js';
 import { EmbedBuilder } from '@discordjs/builders';
 
 import { commands } from './commands';
 import { buttons } from './buttons';
+import { setRandomActivity } from './utils';
 
 import { Client } from './types/discord';
 import { TOKEN, COLOURS, IDS } from './.config.json';
@@ -21,7 +22,10 @@ client.login(TOKEN);
 
 client.once(
 	Events.ClientReady,
-	_client => console.log(`Logged in as ${_client.user?.username}!`),
+	_client => {
+		console.log(`Logged in as ${_client.user?.username}!`);
+		setRandomActivity(_client);
+	},
 );
 
 client.on(

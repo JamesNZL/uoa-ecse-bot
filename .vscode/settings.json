@@ -3,6 +3,7 @@
 		"ping",
 		"setup",
 		"onboard",
-		"autorole"
+		"autorole",
+		"client"
 	]
 }
