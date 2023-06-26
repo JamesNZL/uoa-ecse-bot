@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/JamesNZL/uoa-ecse-bot/compare/v1.0.2...v1.1.0) (2023-06-26)
+
+
+### Features
+
+* **autorole:** :sparkles: add onboarding role on member join ([daba9f2](https://github.com/JamesNZL/uoa-ecse-bot/commit/daba9f25324ae926fdbad12769a69a41b8e43c7e))
+
 ### [1.0.2](https://github.com/JamesNZL/uoa-ecse-bot/compare/v1.0.1...v1.0.2) (2023-06-26)
 
 
