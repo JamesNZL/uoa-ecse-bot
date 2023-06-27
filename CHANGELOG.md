@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0](https://github.com/JamesNZL/uoa-ecse-bot/compare/v1.2.0...v1.3.0) (2023-06-27)
+
+
+### Features
+
+* **client:** :sparkles: decrease maximum random activity timeout ([296825e](https://github.com/JamesNZL/uoa-ecse-bot/commit/296825ec82df670f5502c78221101dacb71376b5))
+
 ## [1.2.0](https://github.com/JamesNZL/uoa-ecse-bot/compare/v1.1.0...v1.2.0) (2023-06-26)
 
 
