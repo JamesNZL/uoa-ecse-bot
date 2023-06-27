@@ -21,7 +21,7 @@ export function setRandomActivity(_client: Client) {
 		() => setRandomActivity(_client),
 		getRandomNumber({
 			min: 600000, // 10 minutes
-			max: 9000000, // 2 hours 30 minutes
+			max: 3600000 // 1 hour
 		}),
 	);
 }
