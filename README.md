@@ -1,5 +1,6 @@
 <div align="center">
-   <img src="assets/ECSE.png" width="25%">
+   <img src="assets/ecse.png" width="50%">
+   <br>
 </div>
 
 # `UoA ECSE` Onboarding Bot
