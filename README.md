@@ -1,3 +1,7 @@
+<div align="center">
+   <img src="assets/ECSE.png" width="25%">
+</div>
+
 # `UoA ECSE` Onboarding Bot
 
 <br>

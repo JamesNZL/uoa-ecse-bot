@@ -4,6 +4,7 @@
 		"setup",
 		"onboard",
 		"autorole",
-		"client"
+		"client",
+		"readme"
 	]
 }
