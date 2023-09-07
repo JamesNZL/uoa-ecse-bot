@@ -1,5 +1,5 @@
 <div align="center">
-   <img src="assets/ecse.png" width="50%">
+   <img src="assets/ecse.svg" width="50%">
    <br>
 </div>
 
